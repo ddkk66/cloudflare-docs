@@ -9,6 +9,7 @@ import GetStarted from "~/components/homepage/GetStarted.astro";
 import BuildWithCloudflare from "~/components/homepage/BuildWithCloudflare.astro";
 import BottomLinks from "~/components/homepage/BottomLinks.astro";
 import Offerings from "~/components/homepage/Offerings.astro";
+import OfferingsTabs from "~/components/homepage/OfferingsTabs.tsx";
 import Changelog from "~/components/homepage/Changelog.astro";
 
 const props = {
@@ -29,7 +30,7 @@ const props = {
 			<TopCards />
 		</div>
 		<div class="flex flex-col items-center justify-center gap-10">
-			<Offerings />
+			<OfferingsTabs client:load />
 		</div>
 		<div class="flex flex-col items-center justify-center gap-10">
 			<GetStarted />

@@ -6,7 +6,7 @@ const changelogs = await getChangelogs({}).then((arr) => arr.slice(0, 5));
 ---
 
 <h2>Documentation changelog</h2>
-<div class="h-[28rem] w-3/4 overflow-y-scroll rounded border px-6 py-4">
+<div class="h-[28rem] w-3/5 overflow-y-scroll rounded border px-6 py-4">
 	<ul class="overflow-y-scroll pl-0">
 		{
 			changelogs.map(async (changelog) => {
