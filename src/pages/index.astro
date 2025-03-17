@@ -192,27 +192,24 @@ const changelogs = await getChangelogs({}).then((arr) => arr.slice(0, 5));
 					}
 				</ul>
 				<div
-					class="h-72 overflow-hidden rounded-b border-b border-l border-r p-6"
+					class="grid grid-cols-2 gap-4 rounded-b border-b border-l border-r p-6 lg:grid-cols-4"
 				>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-						non placerat arcu. Nunc ornare libero ut metus dignissim, vitae
-						efficitur justo pretium. Suspendisse arcu magna, condimentum at
-						rhoncus commodo, condimentum ut enim. Proin in hendrerit sapien,
-						quis hendrerit libero. Suspendisse et dictum tellus, vitae suscipit
-						mi. Proin vulputate at erat vel vulputate. Duis velit sapien,
-						vestibulum facilisis ex facilisis, molestie efficitur lacus. Aliquam
-						erat volutpat. Maecenas tempor tincidunt elementum. Aenean augue
-						ante, vehicula vitae lectus sit amet, dictum maximus lorem. Fusce
-						vitae ultricies tellus. Etiam gravida pulvinar quam, eu vehicula
-						lorem. Maecenas fermentum porttitor mauris. Vestibulum imperdiet
-						turpis ut malesuada facilisis. Etiam pharetra efficitur purus,
-						sodales ultricies orci condimentum vel. Pellentesque sagittis
-						egestas lectus ut rutrum. Curabitur ac libero sapien. Vestibulum
-						tempus leo lectus. Phasellus a convallis ante, non condimentum nibh.
-						Fusce et lacus nibh. Proin venenatis malesuada magna, vel pharetra
-						mi.
-					</p>
+					{
+						["", "", "", ""].map(() => (
+							<div class="flex flex-col items-center gap-4 rounded border p-6 shadow-sm">
+								<div class="text-center">
+									<p class="font-semibold">For websites & apps</p>
+									<p>DNS, CDN, Layer 7, DDoS protection, WAF, and more.</p>
+								</div>
+								<a class="block min-w-16 text-nowrap rounded border border-cl1-brand-orange px-6">
+									Proxy your domain
+								</a>
+								<a class="block min-w-16 text-nowrap px-6">
+									All application services
+								</a>
+							</div>
+						))
+					}
 				</div>
 			</div>
 		</div>
@@ -286,12 +283,17 @@ const changelogs = await getChangelogs({}).then((arr) => arr.slice(0, 5));
 			{
 				footer.map((group) => (
 					<div>
-						<p>{group.heading}</p>
-						<p>{group.description}</p>
-						<ul class="list-none pl-0">
+						<p class="text-xs font-medium uppercase">{group.heading}</p>
+						<p class="mt-1 text-sm">{group.description}</p>
+						<ul class="mt-4 list-none pl-0">
 							{group.links.map((item) => (
 								<li>
-									<a href={item.href}>{item.label}</a>
+									<a
+										href={item.href}
+										class="text-sm font-medium !text-black no-underline"
+									>
+										{item.label}
+									</a>
 								</li>
 							))}
 						</ul>
