@@ -106,11 +106,17 @@ export default function OfferingsTabs() {
 									<p className="font-semibold">{card.label}</p>
 									<p>{card.description}</p>
 								</div>
-								<a className="mt-auto block min-w-16 text-nowrap rounded border border-cl1-brand-orange px-6">
-									Proxy your domain
+								<a
+									href={card.cta.primary.href}
+									className="mt-auto block min-w-16 text-nowrap rounded border border-cl1-brand-orange px-6"
+								>
+									{card.cta.primary.label}
 								</a>
-								<a className="block min-w-16 text-nowrap px-6">
-									All application services
+								<a
+									href={card.cta.secondary.href}
+									className="block min-w-16 text-nowrap px-6"
+								>
+									{card.cta.secondary.label}
 								</a>
 							</div>
 						))}
